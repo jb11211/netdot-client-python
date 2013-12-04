@@ -90,6 +90,23 @@ class Connect(object):
       if response.status_code != 200:
         raise AttributeError('Invalid Credentials')
   
+  def get_auth_token(self):
+      """
+      This function returns the auth cookie so that it can
+      be Reused when this object is recreated
+    
+      Arguments:
+      
+      Usage: 
+        response = netdot.client.get_auth_token()
+      
+      Returns: 
+        Result a cookies store. 
+      """
+      respose = self.http.cookies
+
+
+
   def get(self, url):
       """
       This function provides a simple interface
